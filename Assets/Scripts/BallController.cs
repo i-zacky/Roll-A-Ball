@@ -26,6 +26,9 @@ public class BallController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.CompareTag("Target"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
